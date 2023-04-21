@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Code Generator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <div id="qrcode"></div>
@@ -22,10 +31,11 @@
     const randomString = generateRandomString(10); // You can adjust the length of the random string as needed
     const qr = new QRCode(qrcodeElement, {
       text: randomString,
-      width: 128,
-      height: 128,
+      width: 256,
+      height: 256,
     });
   </script>
 </body>
 </html>
+
 
