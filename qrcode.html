@@ -9,12 +9,23 @@
   <div id="qrcode"></div>
   <script src="qrcode.js"></script>
   <script>
+    function generateRandomString(length) {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
     const qrcodeElement = document.getElementById('qrcode');
+    const randomString = generateRandomString(10); // You can adjust the length of the random string as needed
     const qr = new QRCode(qrcodeElement, {
-      text: "https://www.example.com",
-      width: 256,
-      height: 256,
+      text: randomString,
+      width: 128,
+      height: 128,
     });
   </script>
 </body>
 </html>
+
